@@ -1,0 +1,123 @@
+
+/*CSS style for all screen*/
+body {
+    font-family: sans-serif;
+    margin: 30px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+h2 {
+    color: rgb(17, 13, 117);
+}
+
+button {
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    transition: all 0.1s ease-in-out;
+}
+
+button:active {
+    background-color: #1c3f1d;
+}
+
+input[type="text"] {
+    display: block;
+    border: .5px solid;
+}
+
+button {
+    margin-right: 10px;
+}
+
+#dish-result {
+    color: blue;
+}
+
+
+/*CSS style for computer screen*/
+@media (min-width: 1024px) {
+    body {
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    button {
+        padding: 15px 25px;
+        font-size: 20px;
+        border-radius: 10px;
+    }
+
+    button:hover {
+        background-color: #3e8e41;
+    }
+    
+    input[type="text"] {
+        padding: 10px;
+        font-size: 18px;
+        width: 50%;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    #dish-result {
+        font-size: 20px;
+        color: blue;
+    }
+
+    #food-list {
+        font-size: 20px;
+        column-count: 3;
+    }
+}
+
+/*CSS style for mobile screen*/
+@media (max-width: 1023px) {
+    body {
+        font-size: 40px;
+        text-size-adjust: none;
+    }
+
+    h1 {
+        font-size: 80px;
+    }
+
+    h2 {
+        font-size: 50px;
+    }
+
+    button {
+        padding: 30px 50px;
+        font-size: 40px;
+        border-radius: 30px;
+    }
+
+    input[type="text"] {
+        padding: 30px;
+        width: calc(100% - 60px);
+        font-size: 40px;
+        border-radius: 30px;
+        margin-top: 30px;
+    }
+
+    #dish-result {
+        display: block;
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    ul#food-list {
+        font-size: 40px;
+        column-count: 1;
+    }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ăn gì nè</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <h1>ĂN GÌ NÈ</h1>
+
+    <div>
+        <h2>Chọn món ngẫu nhiên</h2>
+        <button id="choose-dish-button">Chọn món ăn</button>
+        <span id="dish-result">Nhấn để chọn</span>
+        <p id="history-label" style="display:none;">Lịch sử 3 món gần nhất:</p>
+        <ul id="history"></ul>
+    </div>
+
+    <div>
+        <h2>Thêm món mới</h2>
+        <button id="add-food-button">Thêm món mới</button>
+        <button id="add-food-button-default">Thêm món tự động</button>
+        <input type="text" id="new-food-input" title="Nhập món ăn mới" placeholder="Nhập món ăn mới">
+    </div>
+
+    <div>
+        <h2>Danh sách món ăn</h2>
+        <button id="clear-food-list">Xoá danh sách</button>
+        <span id="total-foods-label">Tổng số món ăn:</span>
+        <span id="total-foods-count">0</span>
+    </div>
+    <ul id="food-list"></ul>
+
+    <script src="script.js"></script>
+    <script>
+        // Lấy các element cần thiết
+        const addFoodButton = document.getElementById("add-food-button");
+        const newFoodInput = document.getElementById("new-food-input");
+        const button = document.querySelector("#choose-dish-button");
+        const result = document.querySelector("#dish-result");
+        const totalFoods = document.querySelector("#total-food");
+        const addFootAutoButton = document.getElementById("add-food-button-default");
+        const clearFoodListButton = document.getElementById("clear-food-list");
+        
+        
+
+        // Xử lý button chọn món
+        button.addEventListener("click", function () {
+            //Hiển thị món vừa chọn
+            const food = randomDish(foodsList); 
+            result.textContent = `Món ăn được chọn: ${food}`;
+
+            //Hiển thị lịch sử
+            if (!food) return;
+            document.getElementById("history-label").style.display = "block";
+            addHistory(food);
+            updateHistory();
+        });
+
+        // Tạo danh sách món ăn tự động
+        addFootAutoButton.addEventListener("click", function () {
+            addDefaultFoods();
+            updateFoodList();
+        });
+
+        // Thêm món ăn mới
+        addFoodButton.addEventListener("click", function () {
+            const newFood = newFoodInput.value;
+            if (!newFood) return;
+            addFood(newFood);
+            updateFoodList();
+        });
+
+        //Xoá danh sách
+        clearFoodListButton.addEventListener("click", function () {
+            clearFoodList();
+            updateFoodList();
+        });
+    </script>
+</body>
+
+</html>
