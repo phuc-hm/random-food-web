@@ -12,8 +12,8 @@
 
     <div>
         <h2>Chọn món ngẫu nhiên</h2>
-        <button id="choose-dish-button">Chọn món ăn</button>
-        <span id="dish-result">Nhấn để chọn</span>
+        <button id="choose-food-button">Chọn món ăn</button>
+        <span id="food-result"></span>
         <p id="history-label" style="display:none;">Lịch sử 3 món gần nhất:</p>
         <ul id="history"></ul>
     </div>
@@ -35,49 +35,10 @@
 
     <script src="script.js"></script>
     <script>
-        // Lấy các element cần thiết
-        const addFoodButton = document.getElementById("add-food-button");
-        const newFoodInput = document.getElementById("new-food-input");
-        const button = document.querySelector("#choose-dish-button");
-        const result = document.querySelector("#dish-result");
-        const totalFoods = document.querySelector("#total-food");
-        const addFootAutoButton = document.getElementById("add-food-button-default");
-        const clearFoodListButton = document.getElementById("clear-food-list");
-        
-        
-
-        // Xử lý button chọn món
-        button.addEventListener("click", function () {
-            //Hiển thị món vừa chọn
-            const food = randomDish(foodsList); 
-            result.textContent = `Món ăn được chọn: ${food}`;
-
-            //Hiển thị lịch sử
-            if (!food) return;
-            document.getElementById("history-label").style.display = "block";
-            addHistory(food);
-            updateHistory();
-        });
-
-        // Tạo danh sách món ăn tự động
-        addFootAutoButton.addEventListener("click", function () {
-            addDefaultFoods();
-            updateFoodList();
-        });
-
-        // Thêm món ăn mới
-        addFoodButton.addEventListener("click", function () {
-            const newFood = newFoodInput.value;
-            if (!newFood) return;
-            addFood(newFood);
-            updateFoodList();
-        });
-
-        //Xoá danh sách
-        clearFoodListButton.addEventListener("click", function () {
-            clearFoodList();
-            updateFoodList();
-        });
+        document.getElementById("choose-food-button").addEventListener("click", chooseFoodButtonClick);
+        document.getElementById("add-food-button-default").addEventListener("click", addDefaultFoodButtonClick);
+        document.getElementById("add-food-button").addEventListener("click", addNewFoodButtonClick);
+        document.getElementById("clear-food-list").addEventListener("click", clearFoodListButtonClick);
     </script>
 </body>
 
