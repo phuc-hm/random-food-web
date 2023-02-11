@@ -37,7 +37,7 @@ button {
     margin-right: 10px;
 }
 
-#dish-result {
+#food-result {
     color: blue;
 }
 
@@ -70,7 +70,7 @@ button {
         margin-top: 20px;
     }
 
-    #dish-result {
+    #food-result {
         font-size: 20px;
         color: blue;
     }
@@ -110,7 +110,7 @@ button {
         margin-top: 30px;
     }
 
-    #dish-result {
+    #food-result {
         display: block;
         width: 90%;
         margin-top: 20px;
