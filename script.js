@@ -1,6 +1,4 @@
 /*Variables*/
-let buttonPressed = false;
-
 const defaultFoodsList = [
     "Phở",
     "Bún chả",
@@ -37,12 +35,13 @@ const defaultFoodsList = [
     "Cơm gà",
     "Bún măng vịt",
     "Cháo lòng",
-    "Cháo gỏi vịt"
+    "Cháo gỏi vịt",
+    "Bánh ướt lòng gà"
 ];
 
+let buttonPressed = false;
 let foodsList = [];
 let historyList = [];
-
 
 /*Function*/
 function randomDish(foodsList) {
