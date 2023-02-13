@@ -16,6 +16,7 @@ fi
 # Copy index.html and style.css into /public folder
 cp index.html ./public
 cp style.css ./public
+cp contact.html ./public
 
 # Run the command to minify js code
 uglifyjs script.js -o ./public/script.js
